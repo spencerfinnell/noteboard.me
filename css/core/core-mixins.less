@@ -1,0 +1,167 @@
+.clearfix {
+	*zoom: 1;
+	
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	}
+	
+	&:after {
+		clear: both;
+	}
+}
+
+.center-block() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.size(@width, @height) {
+	width: @width;
+	height: @height;
+}
+
+.square(@size) {
+	.size(@size, @size);
+}
+
+.placeholder(@color: @placeholderText) {
+	&:-moz-placeholder {
+		color: @color;
+	}
+	
+	&:-ms-input-placeholder {
+		color: @color;
+	}
+	
+	&::-webkit-input-placeholder {
+		color: @color;
+	}
+}
+
+.text-overflow() {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#font {
+	#family {
+		.serif() {
+			font-family: @serifFontFamily;
+		}
+		
+		.sans-serif() {
+			font-family: @sansFontFamily;
+		}
+		
+		.monospace() {
+			font-family: @monoFontFamily;
+		}
+
+		.title() {
+			font-family: 'Patua One', @serifFontFamily;
+		}
+		
+		.single-title() {
+			font-family: 'Stint Ultra Expanded', @serifFontFamily;
+		}
+	}
+	
+	.shorthand(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+		font-size: @size;
+		font-weight: @weight;
+		line-height: @lineHeight;
+	}
+	
+	.serif(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+		#font > #family > .serif;
+		#font > .shorthand(@size, @weight, @lineHeight);
+	}
+	
+	.sans-serif(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+		#font > #family > .sans-serif;
+		#font > .shorthand(@size, @weight, @lineHeight);
+	}
+	
+	.monospace(@size: @baseFontSize, @weight: normal, @lineHeight: @baseLineHeight) {
+		#font > #family > .monospace;
+		#font > .shorthand(@size, @weight, @lineHeight);
+	}
+}
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+
+.background-clip(@clip) {
+  -webkit-background-clip: @clip;
+     -moz-background-clip: @clip;
+          background-clip: @clip;
+}
+
+.background-size(@size){
+  -webkit-background-size: @size;
+     -moz-background-size: @size;
+       -o-background-size: @size;
+          background-size: @size;
+}
+
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+      -ms-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+.opacity(@opacity) {
+	opacity: @opacity / 100;
+	filter: ~"alpha(opacity=@{opacity})";
+}
+
+
+#translucent {
+	.background(@color: @white, @alpha: 1) {
+		background-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+	}
+	
+	.border(@color: @white, @alpha: 1) {
+		border-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+		.background-clip(padding-box);
+	}
+}
+
+#gradient {
+	.horizontal(@startColor: #555, @endColor: #333) {
+		background-color: @endColor;
+		background-image: -moz-linear-gradient(left, @startColor, @endColor); // FF 3.6+
+		background-image: -ms-linear-gradient(left, @startColor, @endColor); // IE10
+		background-image: -webkit-gradient(linear, 0 0, 100% 0, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+		background-image: -webkit-linear-gradient(left, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+		background-image: -o-linear-gradient(left, @startColor, @endColor); // Opera 11.10
+		background-image: linear-gradient(left, @startColor, @endColor); // Le standard
+		background-repeat: repeat-x;
+		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",@startColor,@endColor)); // IE9 and down
+	}
+	
+	.vertical(@startColor: #555, @endColor: #333) {
+		background-color: mix(@startColor, @endColor, 60%);
+		background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+		background-image: -ms-linear-gradient(top, @startColor, @endColor); // IE10
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+		background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+		background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+		background-image: linear-gradient(top, @startColor, @endColor); // The standard
+		background-repeat: repeat-x;
+		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor)); // IE9 and down
+	}
+}

@@ -1,0 +1,51 @@
+form {
+	label {
+		font-weight: bold;
+	}
+	
+	input[type="text"],
+	input[type="password"],
+	textarea {
+		padding: 8px;
+		width: 100%;
+		border: 2px solid #ccc;
+		box-sizing: border-box;
+	}
+
+	input:focus,
+	textarea:focus {
+		border-color: #bbb;
+		outline: 0;
+	}
+	
+	.submit-note {
+		margin-left: 10px;
+	}
+}
+
+input[type="submit"], 
+.button-submit {
+	color: @noteBrown;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0 8px 0 0;
+	padding: 12px 15px 10px;
+	background: @noteYellow;
+	border: 0;
+	cursor: pointer;
+	display: inline-block;
+	
+	&.cancel {
+		color: @white;
+		background: #d62727;
+		
+		&:hover {
+			color: @white;
+		}
+	}
+
+	&:hover {
+		color: @noteBrown;
+		text-decoration: none;
+	}
+}

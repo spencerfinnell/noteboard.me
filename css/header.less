@@ -1,0 +1,54 @@
+#masthead {
+	margin: 5% 0 0 115px;
+	overflow: hidden;
+	
+	hgroup {
+		float: left;
+	}
+	
+	#access {
+		margin: 20px 0 0 125px;
+		float: left;
+	}
+}
+
+.site-title {
+	font: 48px/normal 'Patua One', Georgia, Cambria, serif;
+	text-transform: lowercase;
+	letter-spacing: -0.04em;
+	margin: 0;
+	padding: 0;
+	
+	 a {
+		color: @white;
+		text-decoration: none;
+		
+		span {
+			color: #f6cd91;
+		}
+	}
+}
+
+.site-description {
+	display: none;
+}
+
+#access ul {
+	.reset-list;
+	
+	li {
+		margin: 0 25px 0 0;
+		float: left;
+		
+		a {
+			font-size: @baseFontSize;
+			font-weight: bold;
+			color: @white;
+			text-decoration: none;
+		}
+		
+		&.subtle a {
+			.opacity(80%);
+		}
+	}
+}

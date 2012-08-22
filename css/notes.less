@@ -1,0 +1,277 @@
+#notes {
+	overflow: hidden;
+	
+	td {
+		vertical-align: top;
+	}
+}
+
+#note {
+	margin: 50px 0 0 115px;
+	width: 550px;
+	
+	.title {
+		margin-bottom: 0.5em;
+		color: @white;
+		font: 4em Raleway, Helvetica, sans-serif;
+	}
+	
+	.entry-content {
+		color: @white;
+		
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin: 24px 0;
+			margin: 1.714285714rem 0 0;
+			line-height: 1.714285714;
+		}
+		
+		h1 {
+			font-size: 21px;
+			font-size: 1.5rem;
+			line-height: 1.5;
+		}
+		
+		h2 {
+			font-size: 18px;
+			font-size: 1.285714286rem;
+			line-height: 1.6;
+		}
+		
+		h3 {
+			font-size: 16px;
+			font-size: 1.142857143rem;
+			line-height: 1.846153846;
+		}
+		
+		h4 {
+			font-size: 14px;
+			font-size: 1rem;
+			line-height: 1.846153846;
+		}
+		
+		h5 {
+			font-size: 13px;
+			font-size: 0.928571429rem;
+			line-height: 1.846153846;
+		}
+		
+		h6 {
+			font-size: 12px;
+			font-size: 0.857142857rem;
+			line-height: 1.846153846;
+		}
+		
+		p {
+			margin: 0 0 24px;
+			margin: 0 0 1.714285714rem;
+			line-height: 1.714285714;
+		}
+		
+		ol,
+		ul {
+			margin: 0 0 24px;
+			margin: 0 0 1.714285714rem;
+			line-height: 1.714285714;
+		}
+		
+		ul ul,
+		ol ol,
+		ul ol,
+		ol ul {
+			margin-bottom: 0;
+		}
+		
+		ul {
+			list-style: disc outside;
+		}
+		
+		ol {
+			list-style: decimal outside;
+		}
+		
+		li {
+			margin: 0 0 0 24px;
+			margin: 0 0 0 1.714285714rem;
+		}
+		
+		blockquote {
+			padding: 24px;
+			padding: 1.714285714rem;
+			font-style: italic;
+		}
+		
+		code {
+			font-family: Consolas, Monaco, Lucida Console, monospace;
+			font-size: 12px;
+			font-size: 0.857142857rem;
+			line-height: 2;
+		}
+		
+		pre {
+			display: block;
+			padding: 8.5px;
+			margin: 0 0 9px;
+			font-size: 12.025px;
+			line-height: 18px;
+			word-break: break-all;
+			word-wrap: break-word;
+			white-space: pre;
+			white-space: pre-wrap;
+			background-color: whiteSmoke;
+			border: 0;
+			
+			.border-radius(4px);
+		}
+		
+		pre code {
+			display: block;
+		}
+		
+		abbr,
+		dfn {
+			border-bottom: 1px dotted #666;
+			cursor: help;
+		}
+		
+		address {
+			display: block;
+			margin: 0 0 24px;
+			margin: 0 0 1.714285714rem;
+		}
+	}
+	
+	.edit-note {
+		margin-top: 30px;
+		padding-top: 20px;
+		border-top: 1px dashed rgba(0, 0, 0, .10);
+		
+		.opacity(60);
+		
+		&:hover {
+			.opacity(100);
+		}
+	}
+	
+	form {
+		p {
+			/** */
+		}
+		
+		label:not(.action) {
+			.hide-text;
+		}
+		
+		input[type="text"],
+		input[type="password"],
+		textarea {
+			font: 13px Helvetica, Arial, sans-serif;
+			color: #62541E;
+			background: #fff;
+			border: 0;
+			width: 100%;
+			padding: 15px;
+			box-sizing: border-box;
+		}
+
+		input[type="text"].note-title {
+			font-size: 20px;
+		}
+
+		textarea {
+			height: 462px;
+		}
+
+		input[type="text"]:focus,
+		textarea:focus {
+			outline: 0;
+		}
+	}
+}
+
+.kinetic-moving-left .note:hover,
+.kinetic-moving-right .note:hover {
+	cursor: move !important;
+}
+
+.note {
+	margin: 0;
+	padding: 30px;
+	width: 250px;
+	height: 250px;
+	background: #ffefaf;
+	position: relative;
+	
+	.box-sizing(border-box);
+	
+	p {
+		margin-top: 0;
+	}
+	
+	ul, 
+	ol {
+		margin: 0 0 1.5em 1.5em;
+		padding-left: 0;
+	}
+
+	ul {
+		list-style: disc;
+	}
+
+	ol {
+		list-style: decimal;
+	}
+
+	ul ul, 
+	ol ol, 
+	ul ol, 
+	ol ul {
+		margin-bottom: 0;
+		margin-left: 1.5em;
+	}
+
+	h1 {
+		font-size: 2em;
+	}
+	
+	h2 {
+	
+	}
+	
+	h3.title {
+		margin-top: 0;
+	}
+	
+	a.click-through {
+		position: absolute;
+		width: 250px;
+		height: 250px;
+		top: 0;
+		left: 0;
+	}
+	
+	&:active {
+		padding: 25px;
+		border: 5px solid #fff;
+	}
+	
+	&:hover {
+		cursor: pointer;
+	}
+	
+	&.add-new {
+		text-align: center;
+		line-height: 190px;
+		background: #f6cd91;
+		
+		a {
+			font-size: 150px;
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+}

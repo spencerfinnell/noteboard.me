@@ -1,0 +1,119 @@
+.group-title,
+#modal-content h3 {
+	margin: 0;
+	
+	font: normal 24px 'Podkova', Georgia, Cambria, serif; 
+	color: @white;
+	
+	a {
+		color: @white;
+		text-decoration: none;
+	}
+}
+
+#notes-by-group {
+	margin: 50px 115px 0 0;
+	
+	.group {
+		margin: 0 0 0 115px;
+		float: left;
+		vertical-align: middle;
+		
+		.group-action {
+			color: @bodyBackground;
+			text-transform: uppercase;
+			margin-top: 5px;
+			margin-left: 5px;
+			padding: 2px 5px 2px;
+			display: inline-block;
+			vertical-align: top;
+		
+			#translucent > .background(@white, .80);
+			#font > .sans-serif(0.40em, bold, 11px);
+			.border-radius(2px);
+			
+			&.view-all {
+				margin: 5px 9px 0 0;
+				float: right;
+			}	
+			
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		
+		&.all {
+			.group-of-notes .note:nth-child(3n+1) {
+				clear: none;
+			}
+		}
+	}
+}
+
+.group-of-notes {
+	.reset-list;
+	margin-top: 15px;
+	
+	.note {
+		margin: 0 10px 10px 0;
+		float: left;
+		
+		&:nth-child(3n+1) {
+			clear: left;
+		}
+	}
+}
+
+#groups-overview {
+	margin: 50px 0 0 115px;
+	
+	ul {
+		.reset-list;
+		
+		margin-top: 15px;
+		width: 280px;
+		
+		.group {
+			margin: 0 0 10px;
+			background: @noteYellow;
+			float: none;
+			
+			a {
+				color: @noteBrown;
+				padding: 10px 15px;
+				display: block;
+				
+				strong {
+					#font > .shorthand(14px, bold, normal);
+				}
+				
+				small {
+					display: block;
+					
+					#font > .shorthand(12px, normal, 15px);
+					.opacity(50);
+				}
+				
+				&:active {
+					padding: 7px 12px;
+					border: 3px solid #fff;
+				}
+				
+				&:hover {
+					text-decoration: none;
+				}
+			}
+			
+			&.add-new {
+				line-height: 40px;
+				background: #f6cd91;
+				
+				a {
+					font-size: 68px;
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
